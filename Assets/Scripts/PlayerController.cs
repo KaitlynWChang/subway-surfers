@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
         {
             isOnGround = false;
-            playerAnim.SetTrigger("Jump--Jump");
+            playerAnim.SetTrigger("Jump");
         }
 
     }
