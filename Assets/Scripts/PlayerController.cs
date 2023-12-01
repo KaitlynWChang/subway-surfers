@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnim;
     private bool isOnGround;
+
+    public bool gameOver = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +38,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            gameOver = true;
+            Debug.Log("Game Over!");
         }
     }
 }
