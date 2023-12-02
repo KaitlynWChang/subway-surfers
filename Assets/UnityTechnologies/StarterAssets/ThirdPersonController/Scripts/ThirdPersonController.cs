@@ -34,7 +34,7 @@ namespace StarterAssets
 
         [Space(10)]
         [Tooltip("The height the player can jump")]
-        public float JumpHeight = 1.2f;
+        public float JumpHeight = 2.4f;
 
         [Tooltip("The character uses its own gravity value. The engine default is -9.81f")]
         public float Gravity = -15.0f;
@@ -74,6 +74,8 @@ namespace StarterAssets
 
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
+
+        private bool jumping = false;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -177,7 +179,7 @@ namespace StarterAssets
 
         private void GroundedCheck()
         {
-            // set sphere position, with offset
+            /*// set sphere position, with offset
             Vector3 spherePosition = new Vector3(transform.position.x, transform.position.y - GroundedOffset,
                 transform.position.z);
             Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
@@ -187,7 +189,8 @@ namespace StarterAssets
             if (_hasAnimator)
             {
                 _animator.SetBool(_animIDGrounded, Grounded);
-            }
+            }*/
+            _animator.SetBool(_animIDGrounded, true);
         }
 
         private void CameraRotation()
@@ -213,7 +216,7 @@ namespace StarterAssets
 
         private void Move()
         {
-            // set target speed based on move speed, sprint speed and if sprint is pressed
+/*            // set target speed based on move speed, sprint speed and if sprint is pressed
             float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
@@ -276,12 +279,17 @@ namespace StarterAssets
             {
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
-            }
+            }*/
         }
 
         private void JumpAndGravity()
         {
-            if (Grounded)
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                jumping = true;
+            }
+
+            if (jumping)
             {
                 // reset the fall timeout timer
                 _fallTimeoutDelta = FallTimeout;
@@ -289,7 +297,7 @@ namespace StarterAssets
                 // update animator if using character
                 if (_hasAnimator)
                 {
-                    _animator.SetBool(_animIDJump, false);
+                    _animator.SetBool(_animIDJump, true);
                     _animator.SetBool(_animIDFreeFall, false);
                 }
 
@@ -317,6 +325,10 @@ namespace StarterAssets
                 {
                     _jumpTimeoutDelta -= Time.deltaTime;
                 }
+                else
+                {
+                    jumping = false;
+                }
             }
             else
             {
@@ -334,6 +346,8 @@ namespace StarterAssets
                     if (_hasAnimator)
                     {
                         _animator.SetBool(_animIDFreeFall, true);
+                        _animator.SetBool(_animIDJump, false);
+                        jumping = false;
                     }
                 }
 

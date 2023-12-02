@@ -26,7 +26,7 @@ public class SpawnManager : MonoBehaviour
     {
         //if (playerControllerScript.gameOver == false)
         //{
-        spawnPos = new Vector3(0, 0, Random.Range(-10,10));
+        spawnPos = new Vector3(0, 0, Random.Range(-5,5));
         Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
         //}
     }

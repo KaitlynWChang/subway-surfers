@@ -22,16 +22,18 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        if (!gameOver) {
+            horizontalInput = Input.GetAxis("Horizontal");
+            transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
-        if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
-        {
-            isOnGround = false;
-            playerAnim.SetTrigger("Jump");
+            if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
+            {
+                isOnGround = false;
+                playerAnim.SetTrigger("Jump");
+            }
         }
-
     }
+  
 
     private void OnCollisionEnter(Collision collision)
     {
