@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 3.0f;
     public float obstacleSpeed = 30.0f;
 
+    public int points = 0;
+
     private Animator playerAnim;
     private bool isOnGround;
 
@@ -49,6 +51,13 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over!");
+        }
+
+        else if (collision.gameObject.CompareTag("Coin"))
+        {
+            points++;
+            Debug.Log("You got a coin!");
+            Destroy(collision.gameObject);
         }
     }
 

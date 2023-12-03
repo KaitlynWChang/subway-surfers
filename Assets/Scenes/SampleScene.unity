@@ -326,7 +326,9 @@ MonoBehaviour:
   horizontalInput: 0
   speed: 3
   obstacleSpeed: 30
+  points: 0
   gameOver: 0
+  coolDownTime: 100
 --- !u!54 &526898523
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -639,6 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 4869478236621999727, guid: 4d07265c5ab1b6d469860602e69ef384, type: 3}
+  coinPrefab: {fileID: 1795825202984373152, guid: e5e342d0846ad664baa2e8ecd72e91e5, type: 3}
   powerUpPrefab: {fileID: 0}
   powerUpTypes:
   - {fileID: 8579811263725470821, guid: dd6d0bf011996034e9cbf60708e23853, type: 3}
