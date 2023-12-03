@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Ground
   - Obstacle
+  - PowerUp
   layers:
   - Default
   - TransparentFX

@@ -325,6 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   speed: 3
+  obstacleSpeed: 30
   gameOver: 0
 --- !u!54 &526898523
 Rigidbody:
@@ -638,6 +639,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 4869478236621999727, guid: 4d07265c5ab1b6d469860602e69ef384, type: 3}
+  powerUpPrefab: {fileID: 0}
+  powerUpTypes:
+  - {fileID: 8579811263725470821, guid: dd6d0bf011996034e9cbf60708e23853, type: 3}
+  - {fileID: 1519668891320782245, guid: 36e3d2d84ead0264c92039d92b6e2fc6, type: 3}
+  - {fileID: 2285795321696697015, guid: 3ca5b4ceb3fa7204488c02d18798af3f, type: 3}
+  - {fileID: 8787255012124181128, guid: 8d274fee58f2f1c48a4c799d59f4d090, type: 3}
 --- !u!4 &1087549718
 Transform:
   m_ObjectHideFlags: 0

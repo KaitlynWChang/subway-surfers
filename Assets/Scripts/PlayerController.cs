@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
     public float speed = 3.0f;
+    public float obstacleSpeed = 30.0f;
 
     private Animator playerAnim;
     private bool isOnGround;
@@ -47,5 +48,10 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             Debug.Log("Game Over!");
         }
+    }
+
+    public void CoolDown()
+    {
+
     }
 }
