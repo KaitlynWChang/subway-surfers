@@ -38,6 +38,7 @@ public class PowerUpDisplay : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            // powerUp.ApplyPowerUp();
             GameObject player = GameObject.Find("RobotKyle");
 
             PlayerController playerController = player.GetComponent<PlayerController>();
@@ -50,7 +51,7 @@ public class PowerUpDisplay : MonoBehaviour
 
             playerController.CoolDown();
 
-            Debug.Log("You got a power up!");
+            powerUp.PowerUpText();
 
             Destroy(gameObject);
         }

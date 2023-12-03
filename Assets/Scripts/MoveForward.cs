@@ -16,12 +16,15 @@ public class MoveForward : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        speed = GameObject.Find("RobotKyle").GetComponent<PlayerController>().obstacleSpeed;
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
-
-        if (transform.position.x > backBound)
+        if (!GameObject.Find("RobotKyle").GetComponent<PlayerController>().gameOver)
         {
-            Destroy(gameObject); 
+            speed = GameObject.Find("RobotKyle").GetComponent<PlayerController>().obstacleSpeed;
+            transform.Translate(Vector3.right * speed * Time.deltaTime);
+
+            if (transform.position.x > backBound)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

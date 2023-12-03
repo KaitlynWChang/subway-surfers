@@ -1,3 +1,4 @@
+using StarterAssets;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,4 +14,9 @@ public class PowerUp : ScriptableObject
     public float jumpMultiplier;
 
     public int pointChange;
+
+    public void PowerUpText()
+    {
+        Debug.Log("You got a power up!");
+    }
 }

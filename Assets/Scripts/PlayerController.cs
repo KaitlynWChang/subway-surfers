@@ -16,10 +16,16 @@ public class PlayerController : MonoBehaviour
 
     public int coolDownTime = 100;
 
+    delegate void MultiDelegate();
+    MultiDelegate updatePoints;
+
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         playerAnim = GetComponent<Animator>();
+        updatePoints += IncrementPoints;
+        updatePoints += DisplayPoints;
     }
 
     // Update is called once per frame
@@ -49,14 +55,24 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over!");
+            Time.timeScale = 0;
         }
 
         if (collision.gameObject.CompareTag("Coin"))
         {
+            updatePoints();
             Destroy(collision.gameObject);
-            Points.Instance.point++;
-            Debug.Log("Points: " + Points.Instance.point);
         }
+    }
+
+    public void IncrementPoints()
+    {
+        Points.Instance.point++;
+    }
+
+    public void DisplayPoints()
+    {
+        Debug.Log("Points: " + Points.Instance.point);
     }
 
     public void CoolDown()

@@ -36,7 +36,12 @@ public class SpawnManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (GameObject.Find("RobotKyle").GetComponent<PlayerController>().gameOver)
+        {
+            CancelInvoke("SpawnObstacle");
+            CancelInvoke("SpawnPowers");
+            CancelInvoke("SpawnCoins");
+        }
     }
     void SpawnObstacle()
     {
