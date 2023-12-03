@@ -46,6 +46,8 @@ public class PowerUpDisplay : MonoBehaviour
             playerController.speed *= speedMultiplier;
             playerController2.JumpHeight *= jumpMultiplier;
 
+            playerController.CoolDown();
+
             Debug.Log("You got a power up!");
 
             Destroy(gameObject);

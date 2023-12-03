@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
 
     public bool gameOver = false;
 
+    public int coolDownTime = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,6 +54,14 @@ public class PlayerController : MonoBehaviour
 
     public void CoolDown()
     {
+        StartCoroutine(PowerDown());
+    }
 
+    IEnumerator PowerDown()
+    {
+        for (int i = coolDownTime; i >= 0; i --) {
+            yield return new WaitForSeconds(.1f);
+        }
+        Debug.Log("Power up used up!");
     }
 }
