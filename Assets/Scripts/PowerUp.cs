@@ -12,5 +12,5 @@ public class PowerUp : ScriptableObject
     public float speedMultiplier;
     public float jumpMultiplier;
 
-    public float pointChange;
+    public int pointChange;
 }

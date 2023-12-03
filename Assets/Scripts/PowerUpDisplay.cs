@@ -14,7 +14,7 @@ public class PowerUpDisplay : MonoBehaviour
     public float speedMultiplier;
     public float jumpMultiplier;
  
-    public float pointChange;
+    public int pointChange;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +45,8 @@ public class PowerUpDisplay : MonoBehaviour
 
             playerController.speed *= speedMultiplier;
             playerController2.JumpHeight *= jumpMultiplier;
+
+            Points.Instance.point += pointChange;
 
             playerController.CoolDown();
 
