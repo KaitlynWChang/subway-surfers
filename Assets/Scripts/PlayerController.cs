@@ -23,6 +23,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private TMP_Text gameOverText;
 
+    [SerializeField]
+    private TMP_Text scoreText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +34,14 @@ public class PlayerController : MonoBehaviour
         updatePoints += IncrementPoints;
         updatePoints += DisplayPoints;
         gameOverText.SetText("");
+        scoreText.SetText("Score: ");
     }
 
     // Update is called once per frame
     void Update()
     {
         if (!gameOver) {
+            scoreText.SetText("Score: " + Points.Instance.point);
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
 
@@ -61,6 +66,7 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             Debug.Log("Game Over!");
             gameOverText.SetText("Game Over!");
+            scoreText.SetText("Score: " + Points.Instance.point);
             Time.timeScale = 0;
         }
 
