@@ -7,6 +7,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
+    private float zBound = 4.5f;
+
     public float speed = 3.0f;
     public float obstacleSpeed = 30.0f;
 
@@ -44,6 +46,16 @@ public class PlayerController : MonoBehaviour
             scoreText.SetText("Score: " + Points.Instance.point);
             horizontalInput = Input.GetAxis("Horizontal");
             transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+
+            if (transform.position.z < -zBound)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, -zBound);
+            }
+
+            else if (transform.position.z > zBound)
+            {
+                transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
+            }
 
             /*if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
             {
