@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 42eaf2c5dbb13dc498f15df5a5b05fda, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.06615649, g: 0.15344906, b: 0.0577884, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -185,7 +185,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 33779e55b69228547b376214c501a85d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -604,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 89.11, y: 2.04, z: 0.010000084}
+  m_LocalPosition: {x: 91.04, y: 2.04, z: 0.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -684,13 +684,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstaclePrefab: {fileID: 4869478236621999727, guid: 4d07265c5ab1b6d469860602e69ef384, type: 3}
-  coinPrefab: {fileID: 4216809627736596352, guid: e5e342d0846ad664baa2e8ecd72e91e5, type: 3}
+  coinPrefab: {fileID: 735934609352707285, guid: bab9cdf0276d7d842b465dc43134758d, type: 3}
   powerUpPrefab: {fileID: 0}
   powerUpTypes:
-  - {fileID: 8579811263725470821, guid: dd6d0bf011996034e9cbf60708e23853, type: 3}
-  - {fileID: 1519668891320782245, guid: 36e3d2d84ead0264c92039d92b6e2fc6, type: 3}
-  - {fileID: 2285795321696697015, guid: 3ca5b4ceb3fa7204488c02d18798af3f, type: 3}
-  - {fileID: 8787255012124181128, guid: 8d274fee58f2f1c48a4c799d59f4d090, type: 3}
+  - {fileID: 1194138077390594050, guid: b9625e6ecdd766842a11df4b7b4f1968, type: 3}
+  - {fileID: 6335875385480982655, guid: f257af1d96d0c3444806c00f8510c9a7, type: 3}
+  - {fileID: 7940786533443167788, guid: 359319f439a72694ebefeebdf0b51ad0, type: 3}
+  - {fileID: 4330316749827028092, guid: 3db19585a148b394287635f755a12a1a, type: 3}
 --- !u!4 &1087549718
 Transform:
   m_ObjectHideFlags: 0
