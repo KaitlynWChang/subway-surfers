@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -19,6 +20,9 @@ public class PlayerController : MonoBehaviour
     delegate void MultiDelegate();
     MultiDelegate updatePoints;
 
+    [SerializeField]
+    private TMP_Text gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +30,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         updatePoints += IncrementPoints;
         updatePoints += DisplayPoints;
+        gameOverText.SetText("");
     }
 
     // Update is called once per frame
@@ -55,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             Debug.Log("Game Over!");
+            gameOverText.SetText("Game Over!");
             Time.timeScale = 0;
         }
 
