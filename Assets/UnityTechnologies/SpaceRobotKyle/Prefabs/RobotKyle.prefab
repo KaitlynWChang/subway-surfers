@@ -1227,7 +1227,7 @@ GameObject:
   - component: {fileID: 4990764682642888921}
   - component: {fileID: 5086242376466292938}
   - component: {fileID: 2383631508651570851}
-  - component: {fileID: 772210060061789039}
+  - component: {fileID: -1396622081632239944}
   m_Layer: 8
   m_Name: RobotKyle
   m_TagString: Player
@@ -1478,7 +1478,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &772210060061789039
+--- !u!114 &-1396622081632239944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1492,7 +1492,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalInput: 0
   speed: 3
+  obstacleSpeed: 30
   gameOver: 0
+  coolDownTime: 100
+  gameOverText: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!1 &4072265639379859564
 GameObject:
   m_ObjectHideFlags: 0

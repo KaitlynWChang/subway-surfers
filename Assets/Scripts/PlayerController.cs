@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     public float obstacleSpeed = 30.0f;
 
     private Animator playerAnim;
-    private bool isOnGround;
 
     public bool gameOver = false;
 
@@ -22,16 +21,16 @@ public class PlayerController : MonoBehaviour
     delegate void MultiDelegate();
     MultiDelegate updatePoints;
 
-    [SerializeField]
-    private TMP_Text gameOverText;
+    public TMP_Text gameOverText;
 
-    [SerializeField]
-    private TMP_Text scoreText;
+    public TMP_Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 1;
+        /*gameOverText = GameObject.Find("Game Over").GetComponent<TMP_Text>();
+        scoreText = GameObject.Find("Score").GetComponent<TMP_Text>();*/
         playerAnim = GetComponent<Animator>();
         updatePoints += IncrementPoints;
         updatePoints += DisplayPoints;
@@ -56,23 +55,12 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y, zBound);
             }
-
-            /*if (Input.GetKeyDown(KeyCode.Space) && isOnGround)
-            {
-                isOnGround = false;
-                playerAnim.SetTrigger("Jump");
-            }*/
         }
     }
   
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isOnGround = true;
-        }
-
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;

@@ -1,4 +1,3 @@
-using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -42,12 +41,12 @@ public class PowerUpDisplay : MonoBehaviour
             GameObject player = GameObject.Find("RobotKyle");
 
             PlayerController playerController = player.GetComponent<PlayerController>();
-            ThirdPersonController playerController2 = player.GetComponent<ThirdPersonController>();
+            //ThirdPersonController playerController2 = player.GetComponent<ThirdPersonController>();
 
             playerController.speed *= speedMultiplier;
-            playerController2.JumpHeight *= jumpMultiplier;
+            //playerController2.JumpHeight *= jumpMultiplier;
 
-            Points.Instance.point += pointChange;
+            IncrementPoints(pointChange);
 
             playerController.CoolDown();
 
@@ -55,5 +54,16 @@ public class PowerUpDisplay : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public void IncrementPoints(int pointChange)
+    {
+        Points.Instance.point += pointChange;
+    }
+
+    override
+    public string ToString()
+    {
+        return powerName + ": " + description;
     }
 }

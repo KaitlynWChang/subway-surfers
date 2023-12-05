@@ -6,7 +6,7 @@ public class Points : MonoBehaviour
 {
     private static Points _instance;
 
-    public static Points Instance {get { return _instance; } }
+    public static Points Instance { get { return _instance; } set { } }
 
     public int point { get; set; }
 
