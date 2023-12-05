@@ -3,33 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
-    private float startDelay = 2;
-    private float startDelayPowers = 5;
-    private float startDelayCoins = 7;
-    private float repeatRate = 10;
-    private float repeatRatePowers = 30;
-    private float repeatRateCoins = 20;
+    private float __startDelay = 2;
+    private float __startDelayPowers = 5;
+    private float __startDelayCoins = 7;
+    private float __repeatRate = 10;
+    private float __repeatRatePowers = 30;
+    private float __repeatRateCoins = 20;
 
-    public GameObject obstaclePrefab;
-    private Vector3 spawnPos;
+    public GameObject ObstaclePrefab;
+    private Vector3 __spawnPos;
 
-    public static GameObject powerUpPrefab1;
-    public static GameObject powerUpPrefab2;
-    public static GameObject powerUpPrefab3;
-    public static GameObject powerUpPrefab4;
+    public static GameObject PowerUpPrefab1;
+    public static GameObject PowerUpPrefab2;
+    public static GameObject PowerUpPrefab3;
+    public static GameObject PowerUpPrefab4;
 
-    public GameObject coinPrefab;
+    public GameObject CoinPrefab;
 
-    public GameObject powerUpPrefab;
-    public GameObject[] powerUpTypes = {powerUpPrefab1, powerUpPrefab2, powerUpPrefab3, powerUpPrefab4};
+    public GameObject PowerUpPrefab;
+    public GameObject[] PowerUpTypes = { PowerUpPrefab1, PowerUpPrefab2, PowerUpPrefab3, PowerUpPrefab4 };
 
-    private PlayerController playerControllerScript;
+    private PlayerController __playerControllerScript;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
-        InvokeRepeating("SpawnPowers", startDelayPowers, repeatRatePowers);
-        InvokeRepeating("SpawnCoins", startDelayCoins, repeatRateCoins);
+        InvokeRepeating("SpawnObstacle", __startDelay, __repeatRate);
+        InvokeRepeating("SpawnPowers", __startDelayPowers, __repeatRatePowers);
+        InvokeRepeating("SpawnCoins", __startDelayCoins, __repeatRateCoins);
         // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 
@@ -45,27 +45,27 @@ public class SpawnManager : MonoBehaviour
     }
     void SpawnObstacle()
     {
-        //if (playerControllerScript.gameOver == false)
+        //if (__playerControllerScript.gameOver == false)
         //{
-        spawnPos = new Vector3(0, 0, Random.Range(-5,5));
-        Instantiate(obstaclePrefab, spawnPos, obstaclePrefab.transform.rotation);
+        __spawnPos = new Vector3(0, 0, Random.Range(-5, 5));
+        Instantiate(ObstaclePrefab, __spawnPos, ObstaclePrefab.transform.rotation);
         //}
     }
     void SpawnPowers()
     {
-        //if (playerControllerScript.gameOver == false)
+        //if (__playerControllerScript.gameOver == false)
         //{
-        spawnPos = new Vector3(0, 0, Random.Range(-5, 5));
-        powerUpPrefab = powerUpTypes[Random.Range(0, 3)];
-        Instantiate(powerUpPrefab, spawnPos, powerUpPrefab.transform.rotation); 
+        __spawnPos = new Vector3(0, 0, Random.Range(-5, 5));
+        PowerUpPrefab = PowerUpTypes[Random.Range(0, 3)];
+        Instantiate(PowerUpPrefab, __spawnPos, PowerUpPrefab.transform.rotation);
         //}
     }
     void SpawnCoins()
     {
-        //if (playerControllerScript.gameOver == false)
+        //if (__playerControllerScript.gameOver == false)
         //{
-        spawnPos = new Vector3(0, 0, Random.Range(-5, 5));
-        Instantiate(coinPrefab, spawnPos, coinPrefab.transform.rotation);
+        __spawnPos = new Vector3(0, 0, Random.Range(-5, 5));
+        Instantiate(CoinPrefab, __spawnPos, CoinPrefab.transform.rotation);
         //}
     }
 }
