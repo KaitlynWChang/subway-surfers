@@ -15,7 +15,7 @@ public class PowerUpCanIncrementPoints
         PowerUpDisplay powerUpDisplay = powerUp.AddComponent<PowerUpDisplay>();
         powerUpDisplay.pointChange = 3;
         Points points = powerUp.AddComponent<Points>();
-        Points.Instance = points;
+        points.SetDefault(points);
 
         int initial_points = points.point;
 

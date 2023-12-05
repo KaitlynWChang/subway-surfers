@@ -13,8 +13,8 @@ public class CoinIncrementsPointsBy1
         GameObject player = new GameObject("Robot Kyle");
         PlayerController controller = player.AddComponent<PlayerController>();
         Points points = player.AddComponent<Points>();
-        Points.Instance = points; 
-        
+        points.SetDefault(points);
+
         int initial_points = points.point;
 
         //Act

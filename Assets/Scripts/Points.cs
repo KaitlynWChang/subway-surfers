@@ -6,9 +6,14 @@ public class Points : MonoBehaviour
 {
     private static Points _instance;
 
-    public static Points Instance { get { return _instance; } set { } }
+    public static Points Instance{get { return _instance; }}
 
     public int point { get; set; }
+
+    public void SetDefault(Points p)
+    {
+        _instance = p;
+    }
 
     private void Awake()
     {
